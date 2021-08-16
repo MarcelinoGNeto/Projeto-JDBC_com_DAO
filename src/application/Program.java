@@ -13,16 +13,23 @@ public class Program {
 
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		System.out.println("=== test 01: seller findById ===");
+		System.out.println("=== test 01: seller findById ==="); //Chama vendedor por Id
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 
-		System.out.println("\n=== test 02: seller findByDepartment ===");
+		System.out.println("\n=== test 02: seller findByDepartment ===");  //Chama vendedor por Departamento
 		Department department = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("\n=== test 03: seller findAll ===");  //Chama todos os vendedores
+		list = sellerDao.findAll();
+		for (Seller obj : list) {
+			System.out.println(obj);
+		}
+
 		
 	}
 
